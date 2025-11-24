@@ -5,3 +5,4 @@
 4. all the test failure are logged with bug reports
 5. all the passed test cases must marked as passed.
 6. all the Failed test cases must marked as failed.
+7.
