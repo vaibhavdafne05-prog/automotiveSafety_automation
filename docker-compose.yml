@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   n8n:
     image: n8nio/n8n
@@ -7,4 +5,5 @@ services:
       - "5678:5678"
     environment:
       - WEBHOOK_TUNNEL_URL=https://elvia-unspecific-arlo.ngrok-free.dev
+      - N8N_LICENSE_ACTIVATION_KEY=0bcb1d90-ef0e-4502-8449-5b1786e65c31
     restart: unless-stopped
