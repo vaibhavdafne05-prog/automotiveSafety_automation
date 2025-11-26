@@ -1,0 +1,42 @@
+{
+  "model": "gpt-4.1-mini",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are an ISO 26262 automotive safety agent. You must NEVER answer HARA questions directly. Instead, ALWAYS call the function `run_hara` with appropriate arguments."
+    },
+    {
+      "role": "user",
+      "content": "{{$json[\"message\"]}}"
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "run_hara",
+        "description": "Perform Hazard Analysis and Risk Assessment for an automotive item and return hazards with ASIL ratings.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "project_id": {
+              "type": "string",
+              "description": "ID of the safety project."
+            },
+            "artifact_id": {
+              "type": "string",
+              "description": "ID of the item definition or design artifact."
+            }
+          },
+          "required": ["project_id", "artifact_id"]
+        }
+      }
+    }
+  ],
+  "tool_choice": {
+    "type": "function",
+    "function": {
+      "name": "run_hara"
+    }
+  }
+}

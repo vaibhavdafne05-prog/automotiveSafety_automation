@@ -1,2 +1,2 @@
-# automotiveSafety_automation
-demo project for Automotive functional safety
+# Automotive Safety Project
+Rich scaffold initialized.
